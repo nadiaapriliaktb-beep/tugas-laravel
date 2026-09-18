@@ -17,7 +17,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('mahasiswa', MahasiswaController::class);
+    Route::middleware('role:admin')->group(function () {
+        Route::resource('mahasiswa', MahasiswaController::class);
+    });
 });
 
 require __DIR__ . '/auth.php';
