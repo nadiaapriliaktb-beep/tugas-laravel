@@ -28,6 +28,7 @@ class MahasiswaController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'program_studi' => 'required',
+            'angkatan' => 'required',
             'nomor_hp' => 'required',
             'email' => 'required|email|unique:mahasiswas,email',
         ]);
@@ -52,6 +53,7 @@ class MahasiswaController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'program_studi' => 'required',
+            'angkatan' => 'required',
             'nomor_hp' => 'required',
             'email' => 'required|email|unique:mahasiswas,email,' . $mahasiswa->id,
         ]);
